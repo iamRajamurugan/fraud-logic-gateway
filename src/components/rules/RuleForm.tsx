@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Rule, RuleParameter, useRules } from "@/context/RulesContext";
@@ -86,8 +87,8 @@ export function RuleForm({ onClose, initialRule }: RuleFormProps) {
         description,
         parameters: parametersWithIds,
         severity,
-        dateCreated: initialRule.dateCreated || new Date().toISOString(),
-        dateUpdated: new Date().toISOString(),
+        createdAt: initialRule.createdAt || new Date().toISOString(),
+        modifiedAt: new Date().toISOString(),
       });
     } else {
       addRule({
@@ -95,8 +96,8 @@ export function RuleForm({ onClose, initialRule }: RuleFormProps) {
         description,
         parameters: parametersWithIds,
         severity,
-        dateCreated: new Date().toISOString(),
-        dateUpdated: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
+        modifiedAt: new Date().toISOString(),
       });
     }
 
