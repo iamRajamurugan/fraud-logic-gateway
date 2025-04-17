@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   LineChart,
@@ -24,6 +23,7 @@ import {
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Clock, ZoomIn, ZoomOut, RefreshCw } from "lucide-react";
 import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 
 // Mock data
 const hourlyData = [
@@ -192,6 +192,7 @@ export function FraudTrendsChart() {
           </div>
         </div>
       </CardHeader>
+      
       <CardContent className="pt-0">
         <div className="space-y-4">
           <Tabs
